@@ -1,0 +1,98 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Principal {
+  - Scanner : Scanner
+  - aControladora : Controladora
+  + main(pArgs : String[]) : void
+}
+
+class Controladora {
+  - aOrganigrama : ArbolOrganigrama
+  - aDepartamentos : ArrayList<Departamento>
+  - aCargos : ArrayList<Cargo>
+  - aProyectos : ArrayList<Proyecto>
+  - aAsignaciones : ArrayList<Asignacion>
+  + ContratarEmpleado(pEmpleado, pIdJefe) : boolean
+  + BajaEmpleado(pIdEmpleado) : boolean
+  + ModificarEmpleado(pIdEmpleado, pIdCargo, pIdDepartamento, pSalario) : boolean
+}
+
+class Empleado {
+  - aId : int
+  - aNombre : String
+  - aApellido : String
+  - aCargo : Cargo
+  - aDepartamento : Departamento
+  - aSalario : double
+  - aFechaIngreso : String
+}
+
+class Cargo {
+  - aId : int
+  - aNombre : String
+  - aNivelJerarquico : int
+  - aSalarioBase : double
+}
+
+class Departamento {
+  - aId : int
+  - aNombre : String
+  - aDescripcion : String
+  - aResponsable : Empleado
+}
+
+class Proyecto {
+  - aId : int
+  - aNombre : String
+  - aFechaInicio : String
+  - aFechaFin : String
+  - aEstado : String
+  - aResponsable : Empleado
+  - aAsignaciones : ArrayList<Asignacion>
+}
+
+class Asignacion {
+  - aId : int
+  - aEmpleado : Empleado
+  - aProyecto : Proyecto
+  - aHorasAsignadas : int
+  - aRol : String
+}
+
+class NodoEmpleado {
+  - aEmpleado : Empleado
+  - aJefe : NodoEmpleado
+  - aSubordinados : ArrayList<NodoEmpleado>
+  - aNivel : int
+}
+
+class ArbolOrganigrama {
+  - aRaiz : NodoEmpleado
+  + Insertar(pEmpleado, pIdJefe) : boolean
+  + BuscarPorId(pId) : NodoEmpleado
+  + ContarSubordinados(pIdEmpleado) : int
+  + CalcularMasaSalarial(pIdEmpleado) : double
+  + Reasignar(pIdEmpleado, pIdNuevoJefe) : boolean
+  + CalcularAltura() : int
+}
+
+Principal --> Controladora
+Controladora *-- ArbolOrganigrama
+Controladora o-- Cargo
+Controladora o-- Departamento
+Controladora o-- Proyecto
+Controladora o-- Asignacion
+ArbolOrganigrama *-- NodoEmpleado : raiz
+NodoEmpleado *-- Empleado
+NodoEmpleado --> NodoEmpleado : jefe
+NodoEmpleado o-- NodoEmpleado : subordinados
+Empleado --> Cargo
+Empleado --> Departamento
+Departamento --> Empleado : responsable
+Proyecto --> Empleado : responsable
+Proyecto o-- Asignacion
+Asignacion --> Empleado
+Asignacion --> Proyecto
+
+@enduml
