@@ -22,6 +22,10 @@ En la raíz del proyecto se encuentran:
 - `DIAGRAMA-UML.puml`: diagrama de clases en formato PlantUML.
 - `src/`: código fuente Java.
 
+## Estudio para la defensa
+
+La carpeta [`estudio/`](estudio/) contiene material de estudio para la defensa oral: conceptos clave, por qué funciona, cómo funciona paso a paso, preguntas del profesor, preguntas avanzadas para dominar y checklist final. Ver [`estudio/README.md`](estudio/README.md).
+
 ## Preparación del PDF final
 
 Para la entrega se recomienda reunir los documentos en el orden indicado, agregar una portada con los datos reales del grupo e insertar las capturas tomadas durante una ejecución real.
