@@ -18,7 +18,7 @@ javac -version
 ## 4.2 Ubicación del proyecto
 
 ```text
-~/Documentos/PROYECTOS LOCALES/Obligatortio-DYDA-IA
+~/Documentos/PROYECTOS LOCALES/Obligatorio-AYED-IA
 ```
 
 El código fuente está dentro de `src`.
@@ -28,7 +28,7 @@ El código fuente está dentro de `src`.
 Abrir una terminal y ejecutar:
 
 ```bash
-cd ~/Documentos/PROYECTOS\ LOCALES/Obligatortio-DYDA-IA/src
+cd ~/Documentos/PROYECTOS\ LOCALES/Obligatorio-AYED-IA/src
 javac Principal.java Dominio/Controladora.java Dominio/Entidades/*.java Dominio/Estructuras/*.java
 ```
 

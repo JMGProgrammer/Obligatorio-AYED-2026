@@ -121,8 +121,7 @@ public class Controladora {
         return this.aOrganigrama.Insertar(pEmpleado, pIdJefe);
     }
 
-    public boolean ModificarEmpleado(int pIdEmpleado, int pIdCargo,
-            int pIdDepartamento, double pSalario) {
+    public boolean ModificarEmpleado(int pIdEmpleado, int pIdCargo, int pIdDepartamento, double pSalario) {
         Empleado empleado = BuscarEmpleado(pIdEmpleado);
         Cargo cargo = BuscarCargo(pIdCargo);
         Departamento departamento = BuscarDepartamento(pIdDepartamento);

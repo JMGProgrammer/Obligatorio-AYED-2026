@@ -36,7 +36,7 @@ También se administran departamentos, cargos, proyectos y asignaciones.
 ## 2. Estructura del proyecto
 
 ```text
-Obligatortio-DYDA-IA/
+Obligatorio-AYED-IA/
 ├── DIAGRAMA-UML.puml
 ├── LETRA.md
 └── src/
