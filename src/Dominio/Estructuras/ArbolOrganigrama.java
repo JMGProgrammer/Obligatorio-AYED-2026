@@ -100,27 +100,36 @@ public class ArbolOrganigrama {
         if (this.aRaiz == null) {
             return "El organigrama está vacío.";
         }
-        return MostrarPreordenRecursivo(this.aRaiz);
+        return MostrarPreordenRecursivo(this.aRaiz, "", true);
     }
 
     // PRE: actual no es null y pertenece al árbol.
     // POST: devuelve el subárbol en recorrido preorden.
-    private String MostrarPreordenRecursivo(NodoEmpleado pActual) {
+    private String MostrarPreordenRecursivo(NodoEmpleado pActual,
+            String pPrefijo, boolean pEsUltimo) {
         String resultado = "";
+        String rama = pActual == this.aRaiz ? "■ RAÍZ  " :
+                (pEsUltimo ? "└── " : "├── ");
 
-        for (int i = 0; i < pActual.getNivel(); i++) {
-            resultado = resultado + "    ";
-        }
-
-        resultado = resultado + "- " + pActual.getEmpleado().getNombreCompleto();
-        resultado = resultado + " | " + pActual.getEmpleado().getCargo().getNombre();
-        resultado = resultado + " | nivel " + pActual.getNivel();
-        resultado = resultado + " | subordinados totales: ";
-        resultado = resultado + ContarSubordinadosRecursivo(pActual) + "\n";
+        resultado = resultado + pPrefijo + rama;
+        resultado = resultado + "[" + pActual.getEmpleado().getId() + "] ";
+        resultado = resultado + pActual.getEmpleado().getNombreCompleto();
+        resultado = resultado + " | Cargo: "
+                + pActual.getEmpleado().getCargo().getNombre();
+        resultado = resultado + " | Nivel: " + pActual.getNivel();
+        resultado = resultado + " | Subordinados: "
+                + ContarSubordinadosRecursivo(pActual) + "\n";
 
         for (int i = 0; i < pActual.getSubordinados().size(); i++) {
-            resultado = resultado
-                    + MostrarPreordenRecursivo(pActual.getSubordinados().get(i));
+            boolean esUltimo = i == pActual.getSubordinados().size() - 1;
+            String prefijoHijo = pPrefijo;
+
+            if (pActual != this.aRaiz) {
+                prefijoHijo = prefijoHijo + (pEsUltimo ? "    " : "│   ");
+            }
+
+            resultado = resultado + MostrarPreordenRecursivo(
+                    pActual.getSubordinados().get(i), prefijoHijo, esUltimo);
         }
 
         return resultado;

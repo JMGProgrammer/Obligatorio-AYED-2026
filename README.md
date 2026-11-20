@@ -154,14 +154,27 @@ Laura Méndez — Gerente General
 ├── Diego Pérez — Gerente de Área
 │   ├── Ana Rodríguez — Líder
 │   │   ├── Martín Silva — Programador
-│   │   └── Sofía Castro — Programadora
+│   │   ├── Sofía Castro — Programadora
+│   │   ├── Nicolás Pérez — Programador
+│   │   ├── Emilia Silva — Programadora
+│   │   └── Mateo Rodríguez — Programador
 │   └── Pablo Gómez — Líder
-│       └── Lucía Fernández — Administradora de Redes
+│       ├── Lucía Fernández — Administradora de Redes
+│       ├── Tomás Gómez — Administrador de Redes
+│       ├── Julieta Fernández — Programadora
+│       └── Clara Castro — Programadora
 ├── Carolina Díaz — Gerente de Área
 │   ├── Jorge Núñez — Vendedor
-│   └── Valentina Rossi — Vendedora
+│   ├── Valentina Rossi — Vendedora
+│   ├── Paula Díaz — Vendedora
+│   ├── Bruno Pérez — Vendedor
+│   ├── Agustina Rossi — Vendedora
+│   └── Federico Núñez — Vendedor
 └── Fernando López — Gerente de Área
-    └── Camila Torres — Analista de RRHH
+    ├── Camila Torres — Analista de RRHH
+    ├── Ramiro Torres — Analista de RRHH
+    ├── Martina López — Analista de RRHH
+    └── Sebastián Méndez — Analista de RRHH
 ```
 
 Representación como árbol N-ario (Mermaid):
@@ -181,7 +194,7 @@ graph TD
   F --> Ca[Camila Torres<br/>Analista de RRHH]
 ```
 
-Datos iniciales: 12 empleados (incluyendo al Gerente General), 4 niveles (0 a 3), 4 departamentos, 7 cargos, 2 proyectos y 5 asignaciones.
+Datos iniciales: 25 empleados (incluyendo al Gerente General), 4 niveles (0 a 3), 4 departamentos, 7 cargos, 2 proyectos y 5 asignaciones.
 
 ## Arquitectura
 
@@ -490,6 +503,19 @@ Durante la demostración se recomienda ingresar datos del tipo solicitado, ya qu
 | 1009 | Valentina Rossi |
 | 1010 | Fernando López |
 | 1011 | Camila Torres |
+| 1012 | Nicolás Pérez |
+| 1013 | Emilia Silva |
+| 1014 | Tomás Gómez |
+| 1015 | Julieta Fernández |
+| 1016 | Mateo Rodríguez |
+| 1017 | Paula Díaz |
+| 1018 | Bruno Pérez |
+| 1019 | Agustina Rossi |
+| 1020 | Ramiro Torres |
+| 1021 | Martina López |
+| 1022 | Sebastián Méndez |
+| 1023 | Clara Castro |
+| 1024 | Federico Núñez |
 
 ### Departamentos
 
